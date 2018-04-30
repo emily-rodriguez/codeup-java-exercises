@@ -2,43 +2,49 @@ import java.util.Scanner;
 
 public class ConsoleExercises {
     public static void main(String[] args) {
-        int userInt;
 
-        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Please enter an integer: ");
-        userInt = sc.nextInt();
+        int userInt = sc.nextInt();
         System.out.println("You entered the number: " + userInt);
 
-        String firstWord;
-        String secondWord;
-        String thirdWord;
+        System.out.println("Please enter three words: ");
+        String firstWord = sc.next();
+        String secondWord = sc.next();
+        String thirdWord = sc.next();
+        System.out.println(firstWord + " " + secondWord + " " + thirdWord);
 
-        System.out.print("Please enter three words: ");
-        firstWord = sc.next();
-        System.out.println("Your first word is: " + firstWord);
-        secondWord = sc.next();
-        System.out.println("Your second word is: " + secondWord);
-        thirdWord = sc.next();
-        System.out.println("Your third word is: " + thirdWord);
+        sc.nextLine();
 
-//        String sentenceInput;
-//        System.out.print("Please enter a sentence: ");
-//        sentenceInput = sc.next();
-//        System.out.println("Here is my sentence: " + sentenceInput);
+        System.out.print("Please enter a sentence: ");
+        String sentenceInput = sc.nextLine();
+        System.out.println("Here is my sentence: " + sentenceInput);
 
-        String length;
-        String width;
-        System.out.print("Please enter width: ");
-        width = sc.next();
-        System.out.println(width);
-        int widthValue = Integer.parseInt(width);
-        System.out.print("Please enter length: ");
-        length = sc.next();
-        System.out.println(length);
-        int lengthValue = Integer.parseInt(length);
-        int area = lengthValue * widthValue;
-        System.out.println("Area is: " + area);
+        System.out.println();
+        System.out.println("Input the length: ");
+        String lengthString = sc.next();
+        double length = Double.parseDouble(lengthString);
+        System.out.println("Length is: " + length);
+
+        System.out.println("Please input the width: ");
+        String widthString = sc.next();
+        double width = Double.parseDouble(widthString);
+        System.out.println("Width is: " + width);
+
+        System.out.println("Input the height of the room: ");
+        String heightString = sc.next();
+        double height = Double.parseDouble(heightString);
+
+        double volume = width * length * height;
+        System.out.println("The Volume of the room is: " + volume);
+
+        double area = width * length;
+        System.out.println("Area of the room is: " + area);
+
+        double perimeter = 2 * width + 2 * length;
+        System.out.println("The perimeter of the room is: " + perimeter);
+
 
     }
 }

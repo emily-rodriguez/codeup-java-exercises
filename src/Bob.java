@@ -2,22 +2,30 @@ import java.util.Scanner;
 
 public class Bob {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in).useDelimiter("\n");
 
-        String userInput = scan.nextLine();
+        System.out.print("Talk to Bob: ");
 
-        String bobResponse = "";
+        String userInput = scan.next();
+
+        String bobResponse;
 
         if (userInput.endsWith("?")) {
             bobResponse = "Sure.";
         } else if (isUpperCase(userInput)) {
             bobResponse = "Whoa, chill out!";
-        } else if (userInput.equals("")) {
+        } else if (userInput.trim().equals("")) {
             bobResponse = "Fine. Be that way!";
         } else {
             bobResponse = "Whatever";
         }
         System.out.println(bobResponse);
+
+        //class solution
+//        boolean isQuestion = userInput.endsWith("?");
+//        boolean isYelling = userInput.equals(userInput.toUpperCase());
+//        boolean isEmpty = userInput.trim().equals("");
+
     }
 
     public static boolean isUpperCase(String s)
@@ -31,5 +39,6 @@ public class Bob {
         }
         return true;
     }
+
 
 }

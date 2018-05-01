@@ -115,6 +115,7 @@ public class ControlFlowExercises {
             System.out.print("Please enter a grade between 0 to 100: ");
             gradeInput = scan.nextInt();
 
+
             String letterGrade = letterGrade(gradeInput);
 
             System.out.println("The calculated grade for " + gradeInput + " is a grade of: " + letterGrade);

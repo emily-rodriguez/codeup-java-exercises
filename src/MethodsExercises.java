@@ -20,7 +20,8 @@ public class MethodsExercises {
     do {
         System.out.print("Factorial: Please enter an integer between 1 and 10: ");
         int factorialInput = scan.nextInt();
-        System.out.println("Factorial method on " + factorialInput + ": " + factorial(factorialInput));
+        showFactorialOutput(factorialInput);
+//        System.out.println("Factorial method on " + factorialInput + ": " + factorial(factorialInput));
         System.out.print("Would you like to enter another number? [y/N]");
         userChoice = scan.next();
     } while (userChoice.equals("y"));
@@ -38,15 +39,15 @@ public class MethodsExercises {
 
     }
 
-    public static long Addition(long number, long number2) {
+    public static int Addition(int number, int number2) {
         return number + number2;
     }
 
-    public static long Subtraction(long minuend, long subtrahend) {
+    public static int Subtraction(int minuend, int subtrahend) {
         return minuend - subtrahend;
     }
 
-    public static long Multiplication(long number, long multiplier) {
+    public static int Multiplication(int number, int multiplier) {
         if (multiplier == 0) {
             return 0;
         }
@@ -56,7 +57,7 @@ public class MethodsExercises {
         return number + Multiplication(number, multiplier - 1);
     }
 
-    public static float Division(long dividend, long divisor) {
+    public static double Division(int dividend, int divisor) {
         return dividend / divisor;
     }
 
@@ -79,12 +80,40 @@ public class MethodsExercises {
         return userInteger;
         }
 
+    // class review solution:
+
+//    public static int getInt() {
+//        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+//        return scan.nextInt();
+//    }
+//
+//    public static int getInt(int min, int max) {
+//        System.out.println("Please input a number between " + min + " and " + max + ": ");
+//        int number = getInt();
+//        if(number < min || number > max) {
+//            return getInt(min, max);
+//        }
+//        return number;
+//    }
+
     public static long factorial(int n) {
 
         if (n == 1){
             return 1;
         }
         return n * factorial(n-1);
+    }
+
+    public static void showFactorialOutput(int number) {
+        String output = number + "! = ";
+
+        for(int i = 1; i < number; i++) {
+            output += i + " x ";
+        }
+
+        output += number + " = " +factorial(number);
+
+        System.out.println(output);
     }
 
     public static int rollTheDice(int sides) {

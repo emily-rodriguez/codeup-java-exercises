@@ -25,8 +25,9 @@ public class Bob {
 //        boolean isQuestion = userInput.endsWith("?");
 //        boolean isYelling = userInput.equals(userInput.toUpperCase());
 //        boolean isEmpty = userInput.trim().equals("");
-
     }
+
+
 
     public static boolean isUpperCase(String s)
     {
@@ -39,6 +40,5 @@ public class Bob {
         }
         return true;
     }
-
 
 }

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import java.util.Random;
+
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -10,14 +12,29 @@ public class MethodsExercises {
         System.out.println("Division method: " + Division(56, 8));
         System.out.println("Modulus function: " + Modulus(50, 10));
 
-        System.out.print("Enter a number between 1 and 10: ");
+        System.out.print("GetInteger: Enter a number between 1 and 10: ");
         int userInput = getInteger(1, 10);
         System.out.println("User input = " + userInput);
 
+    String userChoice;
+    do {
+        System.out.print("Factorial: Please enter an integer between 1 and 10: ");
+        int factorialInput = scan.nextInt();
+        System.out.println("Factorial method on " + factorialInput + ": " + factorial(factorialInput));
+        System.out.print("Would you like to enter another number? [y/N]");
+        userChoice = scan.next();
+    } while (userChoice.equals("y"));
 
-//        System.out.print("Please enter an integer between 1 and 10: ");
-//        int factorialInput = scan.nextInt();
-//        System.out.println("Factorial method on " + factorialInput + ": " + factorial(factorialInput));
+        System.out.print("Roll the dice: Please enter the number of sides of your dice: ");
+        int diceSides = scan.nextInt();
+        System.out.println("Would you like to roll the dice? [y/N]");
+        String diceSelect = scan.next();
+        do {
+            System.out.println("Dice 1: " + rollTheDice(diceSides));
+            System.out.println("Dice 2: " + rollTheDice(diceSides));
+            System.out.println(("Would you like to roll again? [y/N]"));
+            diceSelect = scan.next();
+        } while (diceSelect.equals("y"));
 
     }
 
@@ -64,11 +81,17 @@ public class MethodsExercises {
 
     public static long factorial(int n) {
 
-        int factor = 1;
-
-        for (int i = 1; i <= n; i++) {
-            factor *= i;
+        if (n == 1){
+            return 1;
         }
-        return factor;
+        return n * factorial(n-1);
     }
+
+    public static int rollTheDice(int sides) {
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(sides) + 2;
+        return randomNumber;
+    }
+
+
 }

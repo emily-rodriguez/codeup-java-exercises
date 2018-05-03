@@ -12,7 +12,7 @@ public class HighLow {
 
         do {
             int randomNumber = randomNumber(1, 100);
-            System.out.println(randomNumber);
+//            System.out.println(randomNumber);
 
             System.out.print("Please guess a number between 1 and 100: ");
             int userGuess = scan.nextInt();
@@ -35,13 +35,13 @@ public class HighLow {
             newGuess = sc.nextInt();
             return guessValidation(newGuess, random);
         }
-        if (guess > random) {
+        else if (guess > random) {
             System.out.print("LOWER: ");
             newGuess = sc.nextInt();
             return guessValidation(newGuess, random);
         }
-        if (guess == random) {
-            System.out.println("Good guess!");
+        else {
+            System.out.println("Good guess! The number was: " + random);
         }
         return random;
     }

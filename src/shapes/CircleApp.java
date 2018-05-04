@@ -7,7 +7,6 @@ public class CircleApp {
     public static void main(String[] args) {
         Input input = new Input();
 
-        boolean anotherCircle;
 
         do {
 
@@ -19,12 +18,11 @@ public class CircleApp {
 
             System.out.println("The circumference of your circle is: " + circle.getCircumference());
 
-            System.out.println("You have made " + circle.getNumberOfCircles() + " circles");
+            System.out.println("Do you want to enter another circle?");
 
-            anotherCircle = input.yesNo("Would you like to make a circle?");
+        } while (input.yesNo());
 
-        } while (anotherCircle);
-
+        System.out.println("You made " + Circle.getNumberOfCircles() + " circles.");
 
     }
 

@@ -1,19 +1,9 @@
 package shapes;
 
 public class Circle {
-    private double radius;
-    public double pi = Math.PI;
     private static int numberOfCircles = 0;
-
-    public double makeCircle(double radius){
-        return this.radius = radius;
-    }
-
-
-    public static int getNumberOfCircles() {
-        return numberOfCircles;
-    }
-
+    private double radius;
+    private double pi = Math.PI;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -27,6 +17,10 @@ public class Circle {
 
     public double getCircumference() {
         return 2 * pi * radius;
+    }
+
+    public static int getNumberOfCircles() {
+        return numberOfCircles;
     }
 
 }

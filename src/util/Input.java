@@ -48,7 +48,7 @@ public class Input {
     }
 
     public int getInt(String prompt) {
-        System.out.println(prompt);
+        System.out.print(prompt);
         return scanner.nextInt();
     }
 

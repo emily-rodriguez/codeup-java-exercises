@@ -34,7 +34,7 @@ public class Input {
 //    }
 
     public boolean yesNo(String prompt) {
-        System.out.println(prompt);
+        System.out.print(prompt);
         String userInput = scanner.next();
         if ("y".equalsIgnoreCase(userInput) || "yes".equalsIgnoreCase(userInput)){
             return true;

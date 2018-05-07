@@ -27,11 +27,25 @@ public class MoviesApplication {
         }
     }
 
-    public static void addMovie(){
+    public static Movie newMovie(){
         String userInputName = input.getString("Please enter a movie title: ");
         String userInputCategory = input.getString("Please enter a movie genre");
-        Movie(userInputName, userInputCategory);
+        return new Movie(userInputName, userInputCategory);
     }
+
+//    public static Movie[] addMovie(Movie[] originalArray, Movie newMovieItem){
+//        int currentSize = originalArray.length;
+//        int newSize = currentSize + 1;
+//        Movie[] tempArray = new Movie[ newSize ];
+//        for (int i = 0; i < currentSize; i++) {
+//            tempArray[i] = originalArray[i];
+//        }
+//        tempArray[newSize - 1] = newMovieItem;
+//        return tempArray;
+//    }
+
+    public static int numberOfMovies = movies.length;
+
 
     public static void showMenu() {
         do {
@@ -67,7 +81,6 @@ public class MoviesApplication {
                     filterMovies("scifi");
                     break;
                 case 6:
-
             }
         } while (true);
     }

@@ -10,4 +10,8 @@ public class Car extends Product{
         this.make = make;
         this.model = model;
     }
+
+    public String getName() {
+        return "This car is a " + make + " " + model;
+    }
 }

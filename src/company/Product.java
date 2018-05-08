@@ -45,6 +45,10 @@ public class Product {
         this.cost = cost;
     }
 
+    public double getProfit() {
+        return price - cost;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

@@ -30,4 +30,9 @@ public class Subscription extends Product{
                 ", cost=" + cost +
                 '}';
     }
+
+    @Override
+    public String getName() {
+        return "This subcription is for " + numberOfMonths + " months";
+    }
 }

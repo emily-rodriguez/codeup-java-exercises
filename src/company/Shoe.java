@@ -10,4 +10,9 @@ public class Shoe extends Product {
         this.size = size;
         this.style = style;
     }
+
+    @Override
+    public String getName() {
+        return "This shoe is a size " + size + " " + style;
+    }
 }

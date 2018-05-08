@@ -3,7 +3,7 @@ package company;
 import util.Input;
 
 public class InventoryApplication {
-    static Product[] products = new Product[5];
+    static Product[] products = new Product[6];
     static Input input = new Input();
 
 
@@ -34,10 +34,18 @@ public class InventoryApplication {
             userProduct = makeUserProduct();
         }
 
+        products[5] = userProduct;
 
-        //iterate through the array relying on polymorphism
+        showProducts(products);
+    }
 
+    //iterate through the array
 
+    public static void showProducts(Product[] products) {
+        for(Product product : products) {
+            System.out.println("Product is: " + product.getName());
+            System.out.println("Company profit is: " + product.getProfit());
+        }
     }
 
     protected static Product makeUserProduct() {
@@ -53,8 +61,10 @@ public class InventoryApplication {
         System.out.println("Input product type: ");
         String type = input.getString();
 
+        //prompt user for product data
+        //instantiate a
 
-
+        return new Product(name, price, cost);
 
     }
 }

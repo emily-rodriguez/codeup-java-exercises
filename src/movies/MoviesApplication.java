@@ -74,7 +74,7 @@ public class MoviesApplication {
                     filterMovies("musical");
                     break;
                 case 7:
-                    newMovie();
+//                    newMovie();
             }
         } while (true);
     }

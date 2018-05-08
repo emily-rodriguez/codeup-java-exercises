@@ -27,11 +27,12 @@ public class MoviesApplication {
         }
     }
 
-    public static Movie newMovie(){
-        String userInputName = input.getString("Please enter a movie title: ");
-        String userInputCategory = input.getString("Please enter a movie genre");
-        return new Movie(userInputName, userInputCategory);
-    }
+//    public static Movie newMovie(){
+//        String userInputName = input.getString("Please enter a movie title: ");
+//        String userInputCategory = input.getString("Please enter a movie genre");
+//        Movie newMovie =  new Movie(userInputName, userInputCategory);
+//        return movies[100] = newMovie;
+//    }
 
     public static int numberOfMovies = movies.length;
 
@@ -47,7 +48,7 @@ public class MoviesApplication {
             System.out.println("4 - view movies in the horror category");
             System.out.println("5 - view movies in the scifi category");
             System.out.println("6 - view movies in the musical category");
-            System.out.println();
+            System.out.println("7 - add a movie");
 
             int userChoice = input.getInt("Enter your choice: ");
 
@@ -72,6 +73,8 @@ public class MoviesApplication {
                 case 6:
                     filterMovies("musical");
                     break;
+                case 7:
+                    newMovie();
             }
         } while (true);
     }

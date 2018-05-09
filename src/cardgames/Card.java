@@ -13,10 +13,6 @@ public class Card {
         this.value = value;
     }
 
-    public static Card getCard(Card card){
-        return card;
-    }
-
     public static String getCardName(Card card){
         return card.name + " of " + card.suit;
     }

@@ -21,15 +21,14 @@ public class GameOfWar {
     public static int cardsInLimbo =0;
 
 
-    public static Card[] shuffleDeck(Card[] cards){
-        Random shuffle = new Random();
+    public static Card[] shuffleDeck(Card[] cards){ //move to cardsarray class
+        Random random = new Random();
 
         for (int i = 0; i < cards.length; i ++) {
-            int randomPlace = shuffle.nextInt(cards.length);
-            Card tempArray = cards[i];
+            int randomPlace = random.nextInt(cards.length);
+            Card temp = cards[i];
             cards[i] = cards[randomPlace];
-            cards[randomPlace] = tempArray;
-
+            cards[randomPlace] = temp;
         }
         return cards;
     }

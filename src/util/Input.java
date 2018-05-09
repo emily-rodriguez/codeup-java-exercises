@@ -14,7 +14,7 @@ public class Input {
     }
 
     public String getString(String prompt) {
-        System.out.println(prompt);
+        System.out.print(prompt);
         return scanner.next();
     }
 

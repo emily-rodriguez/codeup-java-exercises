@@ -16,6 +16,10 @@ public class GameOfWar {
     public static int i;
     public static int cardsInLimbo =0;
 
+    public static void main(String[] args) {
+        playGame();
+    }
+
     public static Card[] shuffleDeck(Card[] cards){
         Random shuffle = new Random();
 
@@ -30,7 +34,7 @@ public class GameOfWar {
     }
 
     public static void warFaceoff(){
-        System.out.println("WAR!");
+        System.out.println("WAR!!!!!");
         player1Card = cards[i += 2];
         player2Card = cards[i += 2];
         System.out.println(player1.name + "'s card: " + getCardName(player1Card) + " AND " + player2.name + "'s card: " + getCardName(player2Card));
@@ -38,10 +42,12 @@ public class GameOfWar {
             System.out.println("Points to " + player1.name);
             player1.playerScore += 6;
             player1.playerScore += cardsInLimbo;
+            System.out.println(player1.getScore(player1,player2));
         } else if (player2Card.value > player1Card.value) {
             System.out.println("Points to " + player2.name);
             player2.playerScore += 6;
             player2.playerScore += cardsInLimbo;
+            System.out.println(player1.getScore(player1,player2));
         } else if (player1Card.value == player2Card.value){
             cardsInLimbo += 4;
             warFaceoff();
@@ -61,14 +67,17 @@ public class GameOfWar {
             if (player1Card.value > player2Card.value) {
                 System.out.println("Point to " + player1.name);
                 player1.playerScore += 2;
+                System.out.println(player1.getScore(player1,player2));
             } else if (player2Card.value > player1Card.value) {
                 System.out.println("Point to " + player2.name);
                 player2.playerScore += 2;
+                System.out.println(player1.getScore(player1,player2));
             } else if (player2Card.value == player1Card.value) {
                 if (i >= 46) {
                     System.out.println("Not enough cards for WAR.");
                     player1.playerScore +=1;
                     player2.playerScore +=1;
+                    System.out.println(player1.getScore(player1,player2));
                 } else {
                     warFaceoff();
                 }
@@ -94,7 +103,4 @@ public class GameOfWar {
         System.out.println("___$$_____$$______$$$_________$$$_____$$_____$$__$$_____$$_____$$_____");
     }
 
-    public static void main(String[] args) {
-        playGame();
-    }
 }

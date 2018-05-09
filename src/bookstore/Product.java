@@ -19,9 +19,7 @@ public class Product {
         return price;
     }
 
-    public double getTotal(double price, double price2) {
-        return price + price2;
-    }
+
 
     public double getTotal(double price, double price2, double price3) {
         return price + price2 + price3;

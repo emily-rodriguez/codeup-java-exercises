@@ -2,6 +2,8 @@ package bookstore;
 
 public class Customer extends Person{
     Product[] cart = new Product[2];
+    double cartTotal;
+
 
     public Customer(String name) {
         super(name);
@@ -18,14 +20,11 @@ public class Customer extends Person{
         cart[1] = book2;
     }
 
-    public static String showProductsinCart(Product[] cart){
-        for (Product item : cart){
-           String itemInCart = "Items in cart: " + item.getTitle() + ", $" + item.getPrice();
+    public double getTotal(Product[] cart) {
+        for (Product item: cart) {
+            cartTotal += (int) item.price;
         }
+        return cartTotal;
     }
-
-//    public static void showCart(Customer customer){
-//    }
-
 
 }

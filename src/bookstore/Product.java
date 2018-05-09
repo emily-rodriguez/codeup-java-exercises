@@ -1,5 +1,7 @@
 package bookstore;
 
+import java.text.DecimalFormat;
+
 public class Product {
     protected String title;
     protected double price;

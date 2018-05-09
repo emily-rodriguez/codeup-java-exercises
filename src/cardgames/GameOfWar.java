@@ -2,8 +2,6 @@ package cardgames;
 
 import util.Input;
 
-import java.util.Random;
-
 import static cardgames.Card.getCardName;
 
 public class GameOfWar {
@@ -20,18 +18,6 @@ public class GameOfWar {
     public static int i;
     public static int cardsInLimbo =0;
 
-
-    public static Card[] shuffleDeck(Card[] cards){ //move to cardsarray class
-        Random random = new Random();
-
-        for (int i = 0; i < cards.length; i ++) {
-            int randomPlace = random.nextInt(cards.length);
-            Card temp = cards[i];
-            cards[i] = cards[randomPlace];
-            cards[randomPlace] = temp;
-        }
-        return cards;
-    }
 
     public static void warFaceoff(){
         System.out.println("WAR!!!!!");
@@ -55,7 +41,7 @@ public class GameOfWar {
     }
 
     public static void playGame() {
-        shuffleDeck(cards);
+        CardsArray.shuffleDeck(cards);
 
         player1 = new Player(input.getString("Welcome player one! Please enter a user name: "));
         player2 = new Player(input.getString("Welcome player two! Please enter a user name: "));

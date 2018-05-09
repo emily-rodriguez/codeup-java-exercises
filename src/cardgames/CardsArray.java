@@ -1,5 +1,7 @@
 package cardgames;
 
+import java.util.Random;
+
 public class CardsArray {
     public static Card[] getAllCards() {
         return new Card[] {
@@ -56,5 +58,17 @@ public class CardsArray {
                 new Card("Clubs", "Three", 3),
                 new Card("Clubs", "Two", 2),
         };
+    }
+
+    public static Card[] shuffleDeck(Card[] cards){
+        Random random = new Random();
+
+        for (int i = 0; i < cards.length; i ++) {
+            int randomPlace = random.nextInt(cards.length);
+            Card temp = cards[i];
+            cards[i] = cards[randomPlace];
+            cards[randomPlace] = temp;
+        }
+        return cards;
     }
 }

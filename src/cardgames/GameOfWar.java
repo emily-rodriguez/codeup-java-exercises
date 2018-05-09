@@ -7,6 +7,10 @@ import java.util.Random;
 import static cardgames.Card.getCardName;
 
 public class GameOfWar {
+    public static void main(String[] args) {
+        playGame();
+    }
+
     public static Input input = new Input();
     public static Card[] cards = CardsArray.getAllCards();
     public static Player player1;
@@ -16,9 +20,6 @@ public class GameOfWar {
     public static int i;
     public static int cardsInLimbo =0;
 
-    public static void main(String[] args) {
-        playGame();
-    }
 
     public static Card[] shuffleDeck(Card[] cards){
         Random shuffle = new Random();
@@ -39,12 +40,12 @@ public class GameOfWar {
         player2Card = cards[i += 2];
         System.out.println(player1.name + "'s card: " + getCardName(player1Card) + " AND " + player2.name + "'s card: " + getCardName(player2Card));
         if (player1Card.value > player2Card.value) {
-            System.out.println("War points to " + player1.name);
+            System.out.println("War points to " + player1.name + "!");
             player1.playerScore += 6;
             player1.playerScore += cardsInLimbo;
             System.out.println(player1.getScore(player1,player2));
         } else if (player2Card.value > player1Card.value) {
-            System.out.println("War points to " + player2.name);
+            System.out.println("War points to " + player2.name + "!");
             player2.playerScore += 6;
             player2.playerScore += cardsInLimbo;
             System.out.println(player1.getScore(player1,player2));
@@ -66,11 +67,11 @@ public class GameOfWar {
             System.out.println(player1.name + "'s card: " + getCardName(player1Card) + " AND " + player2.name + "'s card: " + getCardName(player2Card));
 
             if (player1Card.value > player2Card.value) {
-                System.out.println("2 points to " + player1.name);
+                System.out.println("2 points to " + player1.name + "!");
                 player1.playerScore += 2;
                 System.out.println(player1.getScore(player1,player2));
             } else if (player2Card.value > player1Card.value) {
-                System.out.println("2 points to " + player2.name);
+                System.out.println("2 points to " + player2.name + "!");
                 player2.playerScore += 2;
                 System.out.println(player1.getScore(player1,player2));
             } else if (player2Card.value == player1Card.value) {

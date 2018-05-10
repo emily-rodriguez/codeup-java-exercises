@@ -1,10 +1,14 @@
 package grades;
 
+import util.Input;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
+        Input input = new Input();
 
         Student Bob = new Student("Bob");
         Student Linda = new Student("Linda");
@@ -38,12 +42,38 @@ public class GradesApplication {
         students.put("KeyboardKid", Gene);
         students.put("ToughBunny", Louise);
 
-        getUsernames(students);
+
+            System.out.println("Welcome!");
+            System.out.println();
+            System.out.println("Here are the github usernames of our students:");
+            System.out.println();
+            getUsernames(students);
+            System.out.println();
+        do{
+            String userInput = input.getString("What student would you like to see more information on? Enter \"All\" to view all.");
+
+            if (userInput.equalsIgnoreCase("all")){
+                for (Student username : students.values()) {
+                    System.out.println("Name: " + username.getName());
+                }
+            }
+            else if (students.containsKey(userInput)){
+                System.out.println("Name: " + students.get(userInput).getName() + " - " + "Github Username: " + userInput);
+                ArrayList<Integer> grades = students.get(userInput).getGrades();
+                System.out.println("Current Average: " + students.get(userInput).getGradeAverage(grades));
+            } else {
+                System.out.println("Sorry, that username does not exist");
+            }
+        } while (input.yesNo("Would you like to see another student?"));
+
+        System.out.println("Y'all come back now, ya hear?");
+
     }
 
     public static void getUsernames(HashMap<String, Student> students){
         for (String username : students.keySet()) {
-            System.out.print("|%s|, username");
+            System.out.print(String.format("|%s| ", username));
         }
+        System.out.println();
     }
 }

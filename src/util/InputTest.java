@@ -15,5 +15,11 @@ public class InputTest {
         input.getDouble("Please enter a double", 1, 100);
 
         input.getDouble("Please enter another double");
+
+        input.getHex("Enter a hexidecimal number: ");
+
+        input.getBinary("Enter a binary number: ");
+
+        input.getOctal("Enter an octal number: ");
     }
 }

@@ -43,13 +43,20 @@ public class Input {
         }
     }
 
+
     public int getInt() {
-        return scanner.nextInt();
+        try {
+            return Integer.valueOf(scanner.next());
+        } catch (NumberFormatException e){
+            System.out.println(e);
+            System.out.println("Your input is not an integer");
+            return getInt();
+        }
     }
 
     public int getInt(String prompt) {
         System.out.print(prompt);
-        return scanner.nextInt();
+        return getInt();
     }
 
     public int getInt(int min, int max) {
@@ -91,11 +98,53 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        try {
+            return Double.valueOf(scanner.next());
+        } catch (NumberFormatException e){
+            System.out.println(e);
+            System.out.println("Your input is not a double");
+            return getDouble();
+        }
     }
 
     public double getDouble(String prompt) {
         System.out.println(prompt);
-        return scanner.nextDouble();
+        return getDouble();
+    }
+
+    public int getBinary(String prompt) {
+        System.out.print(prompt);
+        try {
+            int decimal = Integer.valueOf(getString(), 2);
+            System.out.println("Your decimal value is " + decimal);
+            return decimal;
+        } catch(NumberFormatException e) {
+            System.out.println(e.toString());
+            return getBinary(prompt);
+        }
+    }
+
+    public int getHex(String prompt) {
+        System.out.print(prompt);
+        try {
+            int decimal = Integer.valueOf(getString(), 16);
+            System.out.println("Your decimal value is " + decimal);
+            return decimal;
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a valid hex value");
+            return getHex(prompt);
+        }
+    }
+
+    public int getOctal(String prompt) {
+        System.out.print(prompt);
+        try{
+            int decimal = Integer.valueOf(getString(), 8);
+            System.out.println("Your decimal value is " + decimal);
+            return decimal;
+        } catch (NumberFormatException e) {
+            System.out.println(e.toString());
+            return getOctal(prompt);
+        }
     }
 }

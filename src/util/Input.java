@@ -50,7 +50,7 @@ public class Input {
         } catch (NumberFormatException e){
             System.out.println(e);
             System.out.println("Your input is not an integer");
-            return getInt();
+            return getInt("Please enter an integer");
         }
     }
 
@@ -70,7 +70,7 @@ public class Input {
 
     public int getInt(String prompt, int min, int max) {
         System.out.println(prompt);
-        int userInt = getInt();
+        int userInt = getInt(prompt);
         if (userInt < min || userInt > max) {
             System.out.println("Please enter and integer between " + min + " and " + max);
             return getInt(min, max);
@@ -103,7 +103,7 @@ public class Input {
         } catch (NumberFormatException e){
             System.out.println(e);
             System.out.println("Your input is not a double");
-            return getDouble();
+            return getDouble("Please enter a double");
         }
     }
 

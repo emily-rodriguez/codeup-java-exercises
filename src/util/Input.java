@@ -45,8 +45,9 @@ public class Input {
 
 
     public int getInt() {
+        String input = getString();
         try {
-            return Integer.valueOf(scanner.next());
+            return Integer.valueOf(input);
         } catch (NumberFormatException e){
             System.out.println(e);
             System.out.println("Your input is not an integer");
@@ -70,7 +71,7 @@ public class Input {
 
     public int getInt(String prompt, int min, int max) {
         System.out.println(prompt);
-        int userInt = getInt(prompt);
+        int userInt = getInt();
         if (userInt < min || userInt > max) {
             System.out.println("Please enter and integer between " + min + " and " + max);
             return getInt(min, max);
@@ -98,8 +99,9 @@ public class Input {
     }
 
     public double getDouble() {
+        String input = getString();
         try {
-            return Double.valueOf(scanner.next());
+            return Double.valueOf(input);
         } catch (NumberFormatException e){
             System.out.println(e);
             System.out.println("Your input is not a double");
@@ -119,7 +121,7 @@ public class Input {
             System.out.println("Your decimal value is " + decimal);
             return decimal;
         } catch(NumberFormatException e) {
-            System.out.println(e.toString());
+            System.out.println("That is not a valid binary value.");
             return getBinary(prompt);
         }
     }
@@ -131,7 +133,7 @@ public class Input {
             System.out.println("Your decimal value is " + decimal);
             return decimal;
         } catch (NumberFormatException e) {
-            System.out.println("That is not a valid hex value");
+            System.out.println("That is not a valid hex value.");
             return getHex(prompt);
         }
     }
@@ -143,7 +145,7 @@ public class Input {
             System.out.println("Your decimal value is " + decimal);
             return decimal;
         } catch (NumberFormatException e) {
-            System.out.println(e.toString());
+            System.out.println("That is not a valid octal value.");
             return getOctal(prompt);
         }
     }

@@ -39,7 +39,6 @@ public class InventoryApplication {
         showProducts(products);
     }
 
-    //iterate through the array
 
     public static void showProducts(Product[] products) {
         for(Product product : products) {

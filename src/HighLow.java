@@ -12,7 +12,6 @@ public class HighLow {
 
         do {
             int randomNumber = randomNumber(1, 100);
-//            System.out.println(randomNumber);
 
             System.out.print("Please guess a number between 1 and 100: ");
             int userGuess = scan.nextInt();

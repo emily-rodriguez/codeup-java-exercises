@@ -5,7 +5,13 @@ import java.nio.charset.StandardCharsets;
 
 public class Interview {
     public static void main(String[] args) throws IOException {
-        System.out.println(minimumCoins(11));
+//        InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
+//        BufferedReader in = new BufferedReader(reader); String line;
+//        while ((line = in.readLine()) != null)
+//        {
+//            System.out.println(line);
+//        }
+        System.out.println(minimumCoins(20));
     }
 
     public static int minimumCoins(int total) {
